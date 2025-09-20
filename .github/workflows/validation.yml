@@ -1,0 +1,37 @@
+name: nix validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Nix on the GitHub-hosted runner
+      - name: Install Nix
+        uses: DeterminateSystems/determinate-nix-action@v1
+
+      # Optional but recommended: speed up builds with their cache
+      - name: Magic Nix Cache
+        uses: DeterminateSystems/magic-nix-cache-action@v6
+
+      # Formatting (nixfmt)
+      - name: nixfmt (RFC style)
+        run: nix run nixpkgs#nixfmt-rfc-style -- -c .
+
+      # Lint Nix code (statix)
+      - name: statix
+        run: nix run nixpkgs#statix -- check . -i docker-compose.nix
+
+      # Detect dead code (deadnix)
+      - name: deadnix
+        run: nix run nixpkgs#deadnix -- . -f
+
+      # Optional: flake checks
+      # - name: nix flake check
+      #   run: nix flake check --all-systems
