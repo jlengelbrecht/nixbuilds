@@ -54,10 +54,11 @@
         # Browser
         chromium
         firefox-wayland
+        librewolf
 
         # Other gui apps
         thunderbird
-        bitwarden-desktop
+        _1password-gui
 
         # Music
         mpv
@@ -113,7 +114,7 @@
         cpu-x
         marp-cli
       ]
-      ## Install my custom scripts
+      ## Install custom scripts
       ++ (import ./../../shared/desktop/bin { inherit pkgs; });
 
     # For env var

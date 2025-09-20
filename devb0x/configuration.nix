@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # CONFIGURATION FOR A AMD BASED DEV SYSTEM FEATURING
-  # Motherboard: ROG Zeinith Extreme Alpha 2
+  # Motherboard: ROG Zenith Extreme Alpha 2
   # CPU: AMD Ryzen Threadripper 3970X
   # GPU: AMD Radeon RX 7900 XTX
   # RAM: 128G
@@ -9,7 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../shared/desktop/dev/docker/default.nix
-    ../shared/sops.nix
+    # ../shared/sops.nix
     ../shared/optimise.nix
     ../shared/security.nix
   ];
@@ -97,7 +97,7 @@
     # open-webui.enable = true;
 
     # Enable automatic login for the user.
-    # getty.autologinUser = "justalternate";
+    # getty.autologinUser = "devbox";
   };
 
   # Configure console keymap
@@ -139,7 +139,7 @@
   services.openssh.enable = true;
 
   networking = {
-    hostName = "nixos"; # Define your hostname.
+    hostName = "devb0x"; # Define your hostname.
     interfaces."enp70s0".wakeOnLan.enable = true;
     # Enable networking
     networkmanager.enable = true;
