@@ -46,7 +46,7 @@
   # Bootloader.
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
-    loader.systemd-boot.enable = true;
+    # loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     loader.grub.enable = true;
     loader.grub.devices = [ "nodev" ];
