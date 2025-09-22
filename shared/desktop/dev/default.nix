@@ -1,4 +1,7 @@
 { pkgs, inputs, ... }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   imports = [
     # ./R
