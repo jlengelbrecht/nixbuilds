@@ -1,7 +1,9 @@
 { pkgs, ... }:
 let
-  inherit (pkgs) lib zsh;
-in {
+  inherit (pkgs) lib;
+  zsh = pkgs.zsh;
+in
+{
   programs.kitty = {
     enable = true;
     font = {
@@ -22,5 +24,4 @@ in {
     enable = true;
     shell = lib.getExe zsh;
   };
-
 }
