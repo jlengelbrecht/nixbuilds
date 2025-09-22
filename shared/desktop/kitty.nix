@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  inherit (pkgs) lib zsh;
+in {
   programs.kitty = {
     enable = true;
     font = {
@@ -17,7 +20,7 @@
   };
   programs.tmux = {
     enable = true;
-    shell = pkgs.lib.getExe pkgs.zsh;
+    shell = lib.getExe zsh;
   };
 
 }
