@@ -88,7 +88,7 @@ in
       vim
       inputs.justnixvim.packages.${system}.default
       (import ./qwen-code.nix {
-        inherit (pkgs) lib;
+        inherit lib;
         buildNpmPackage = pkgs.buildNpmPackage;
         fetchFromGitHub = pkgs.fetchFromGitHub;
         fetchNpmDeps = pkgs.fetchNpmDeps;
