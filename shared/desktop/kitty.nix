@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-let
-  inherit (pkgs) lib;
-  zsh = pkgs.zsh;
-in
+{ pkgs, lib, ... }:
 {
   programs.kitty = {
     enable = true;
@@ -22,6 +18,6 @@ in
   };
   programs.tmux = {
     enable = true;
-    shell = lib.getExe zsh;
+    shell = lib.getExe pkgs.zsh;
   };
 }
