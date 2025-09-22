@@ -112,11 +112,11 @@
       enable = true;
       enable32Bit = true;
     };
-    opengl.extraPackages = with pkgs; [
+    graphics.extraPackages = with pkgs; [
       amdvlk
     ];
     # For 32 bit applications
-    opengl.extraPackages32 = with pkgs; [
+    graphics.extraPackages32 = with pkgs; [
       driversi686Linux.amdvlk
     ];
   };
