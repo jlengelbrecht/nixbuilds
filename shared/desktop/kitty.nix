@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   programs.kitty = {
     enable = true;
     font = {
@@ -17,7 +17,7 @@
   };
   programs.tmux = {
     enable = true;
-    shell = lib.getExe pkgs.zsh;
+    shell = pkgs.lib.getExe pkgs.zsh;
   };
 
 }
